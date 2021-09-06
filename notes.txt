@@ -1,0 +1,1 @@
+so you simply move values to the necessary registers, and then do a sys call, which requests for the particular service from the kernel based on the values given to a register which is 
