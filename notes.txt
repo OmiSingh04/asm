@@ -1,1 +1,123 @@
-so you simply move values to the necessary registers, and then do a sys call, which requests for the particular service from the kernel based on the values given to a register which is 
+text db "Hello World", 10
+
+db - define bytes
+
+"Hello World", 10 is the data
+
+text is the variable name(name of the memory address)
+
+
+
+registers - part of the processor
+they temporarily hold memory
+
+in x86_64, they are 64 bits
+
+
+unsigned -> 0 - (2^64 - 1)
+signed -> -2^32 - (2^32 - 1)
+
+16 general purpose registers
+
+
+
+system call - 
+program requests a service from the kernel
+syscalls have an ID associated with them
+
+syscall also takes arguments
+
+
+
+the id of the syscall goes in rax register
+
+the arguments for the syscall go into
+rdi
+rsi
+rdx
+r10
+r8
+r9
+
+
+labels - part of the code, similar to functions
+upon compilation the compiler calculates the location where the label will sit in the memory.
+
+
+
+the first syscall we look at is 
+
+sys_write - id - 1
+args - 
+	
+	file descriptor - 
+	0(stdin), 1(stdout), 3(stderr)
+
+	buffer - variable 
+
+	count - number of bytes
+
+
+
+
+global - 
+global is used when you want the linker to know the address of some label
+
+
+sections - data section - initialized data
+bss section - allocated for future use
+text - code
+
+the start label is where the execution starts.
+if the linker cannot find _start, it throws an error.
+
+
+flags -
+registers holding 1 bit only.
+individual flags are part of a larger register
+
+
+
+pointers - they point to data, they hold its memory address.
+they are also registers.
+
+control flow - top to bottom
+the rip register holds the value of the next instruction to be executed.   
+
+
+the rip register holds the address of the next instruction to be executed.
+
+after execution, it is incremented by one. so the control flow goes from top to bottom. 
+
+jumps - jump on different part of the code based on labels.
+can be used to change the control flow 
+
+
+jmp label
+
+_start:
+	jmp _start
+
+infinite loop
+
+
+call - similar to jump, the original position where the call was made can be returned to using 'ret'
+
+
+ 
+ 
+
+
+comparison - changes the value of the flags, and the execution can take different paths based on given conditions.  (conditional jumps)
+
+
+
+cmp rax, 23
+cmp rax, rbx
+
+ after comparision, certain flags are setcmp rax, 23
+cmp rax, rbx
+
+
+after comparision, certain flags are.
+
