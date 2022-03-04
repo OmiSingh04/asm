@@ -121,3 +121,18 @@ cmp rax, rbx
 
 after comparision, certain flags are.
 
+
+math operations - 
+
+manipulate registers
+
+operation register, value/register
+
+first register is the subject of operation
+
+add rax, 5
+sub rbx, rax
+
+mul and div take only one input, the value, and update the rax register
+
+
